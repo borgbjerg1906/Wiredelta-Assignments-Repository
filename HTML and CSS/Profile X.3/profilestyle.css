@@ -47,21 +47,35 @@ border-top: 3px solid black;
 }
 
 #content {
+
 padding: 10px;
-width: 750px;
+width: auto;
 height: 100%;
 background-color: #A9E2F3;
-float: left; 
+ 
+
+
 
 }
 
-#column_left{
+#profile-picture-div{
 padding: 10px;
 width: 160px;
-height: 502px;
+height: auto;
 margin-bottom: 0px;
 background-color: #2EFE64;
-float: left;
+margin-right: 25px;
+
 text-align: center;
+float: right;
+
 }
+#map {
+		border-radius: 25%;
+		border: 5px solid darkblue;
+		margin-left: 20%;
+		margin-bottom: 25px;
+        width: 500px;
+        height: 400px;
+      }
 
