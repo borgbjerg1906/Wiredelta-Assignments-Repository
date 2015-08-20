@@ -1,0 +1,33 @@
+#wrapper {
+height: 60px;
+width: 180px;
+margin-right: auto;
+margin-left: auto;
+background: black;
+}
+
+
+.box_red {
+background-color: red;
+float: left;
+height: 20px;
+width: 20px;
+}
+.box_green {
+background-color: green;
+float: left;
+height: 20px;
+width: 20px;
+}
+.box_blue {
+background-color: blue;
+float: left;
+height: 20px;
+width: 20px;
+}
+.box_blank {
+background-color: black;
+float: left;
+height: 20px;
+width: 20px;
+}

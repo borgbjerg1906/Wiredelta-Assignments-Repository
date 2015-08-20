@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title></title>
+	<meta charset="UTF-8">        
+	
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<!--Stylesheets -->
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	
+
+</head>
+<body>
+	<header id="top-header">
+		<div class="container" >
+			<div class="row">	
+				<div class="span12">
+					<b><h1 id="main-heading">JavaScript Assignment: SOFA WEBSITE!</h1>							
+
+					</div> 
+				</div> 
+			</div> 
+		</header> <!-- top-header end  -->
+
+		<div id="main-container"class="container" >
+			<div class="row">	
+				<div class="span12">
+					<h3 class=""><b>Choose the color you would like:</b></h3>
+
+					<div class="table-div">
+
+						
+							<fieldset>
+
+								<label><input onClick="checkChosenColor();" id="greenRadioBtn" type="radio" name="ship" value="Green"> Green Sofa</label><br>
+								<label><input  onClick="checkChosenColor();" id="orangeRadioBtn" type="radio" name="ship" value="Orange"> Orange Sofa</label><br>
+								<label><input  onClick="checkChosenColor();"id="blueRadioBtn" type="radio" name="ship" value="Blue"> Blue Sofa</label><br>
+								<label><input onClick="checkChosenColor();"id="redRadioBtn" type="radio" name="ship" value="Red"> Red Sofa</label>
+
+
+							</fieldset>
+					
+
+
+					</div>  <!--  table-div end  -->
+
+					<div class="choose-design-div">
+						<h3 class=""><b>Choose the design you would like for your sofa:</b></h3><br>
+						<button onClick="pictureChange1();" id="btn-1"class="btn-default">Design 1</button>
+						<button onClick="pictureChange2();" id="btn-2"class="btn-default">Design 2</button>
+						<button onClick="pictureChange3();" id="btn-3"class="btn-default">Design 3</button>
+					</div> <!--  choose-design-div end  -->
+
+<br>	<div class="chosen-design-div">
+
+<h3>Design Chosen:</h3>
+					<input type="text" name="chosenDesignTextBox" id="DesignTextBox">
+
+
+</div> <!--  chosen-design-div end  -->
+					
+
+					<div class="image-div">
+						<div class="image-div">
+							<img id="SofaImage"src="images/sofa1.jpg" class="img-responsive">
+						</div> <!-- image-div end   -->
+
+
+
+					</div> <!--  span12 end  -->
+				</div> <!--  row end  -->
+			</div> <!--  container end  -->
+
+			
+
+
+			<!-- JavaScript -->
+			<script type="text/javascript" src="js/javascript.js"></script>
+
+		</body>
+		</html>
+

@@ -1,0 +1,65 @@
+body{
+	
+	background-color: #58FA82;
+}
+
+#top-header{
+	text-align: center;
+	margin-bottom: 20px;
+
+}
+#main-container .span12	 {
+	 display:-webkit-box;
+	
+	 
+-webkit-box-orient: vertical;
+	height: auto;
+	background-color: #81F7F3;
+	padding: 25px;
+	border: 5px solid #F7FE2E;
+	border-radius: 25px;
+
+}
+#table{
+	border: 2px solid black;
+}
+.table-div{
+	
+	border: 2px solid black;
+	border-radius: 25px;
+	height: 130px;
+	width: 200px;
+	padding: 10px;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+#table tr label input{
+	margin-top: 20px;
+
+}
+.choose-design-div{
+	margin-top: 10px;
+}
+.image-div
+{
+
+	margin-top: 25px;
+	
+
+}
+.choose-design-div button{
+	height: 50px;
+	width: 100px;
+	margin-left: 50px;
+}
+.image-div img{
+	width: 100%;
+	max-width: 800px;
+	margin-left: 130px;
+	border-radius: 40%;
+	border: 5px solid yellow;
+
+}
+.chosen-design-div{
+	margin-left: 50px;
+}

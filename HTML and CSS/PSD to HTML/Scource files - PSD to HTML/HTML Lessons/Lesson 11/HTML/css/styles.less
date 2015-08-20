@@ -1,0 +1,316 @@
+/**********************************************************************************
+
+	Project Name: Business Landing Page
+	Project Description: A business landing page for Tuts+ Premium
+	File Name: styles.css
+	Author: Adi Purdila
+	Author URI: http://www.adipurdila.com
+	Version: 1.0.0
+	
+**********************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+
+/***********************************************************************************************/
+/* LESS Variables */
+/***********************************************************************************************/
+@link-color: #E74B34;
+@link-color-hover: #132C3B;
+
+@text-color: #6c6c6c;
+
+@border-color: #E0E0E0;
+
+@blockquote-color: #2894d8;
+
+@header-main-color: #3694b7;
+@light-bg-heading-one: #3b5568;
+@light-bg-heading-two: #6694b4;
+@dark-bg-heading-one: white;
+@dark-bg-heading-two: #3694b7;
+
+@body-font: "Cabin", Helvetica, Arial, sans-serif;
+@serif-font: "Gentium Basic", Georgia, serif;
+@heading-font: @body-font;
+
+
+
+
+
+/***********************************************************************************************/
+/* LESS Mixins */
+/***********************************************************************************************/
+.round (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+.gradient (@from, @to) {
+	background-color: @from;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+	background-image: -webkit-linear-gradient(top, @from, @to);
+	background-image:    -moz-linear-gradient(top, @from, @to);
+	background-image:      -o-linear-gradient(top, @from, @to);
+	background-image:         linear-gradient(to bottom, @from, @to);
+}
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @spread: 0px, @color: #000) {
+	-webkit-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+
+.inner-shadow (inset, @x: 0, @y: 0, @blur: 1px, @color: #000) {
+	-webkit-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+
+.text-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+     text-shadow: @arguments;
+}
+
+.transition (@duration: 0.2s, @ease: ease-in) {
+	-webkit-transition: all @duration @ease;
+	-moz-transition: all @duration @ease;
+	-o-transition: all @duration @ease; 
+	transition: all @duration @ease;
+}
+
+
+
+
+/***********************************************************************************************/
+/* 1. General Styles */
+/***********************************************************************************************/
+body {
+	font: 14px/21px @body-font;
+	color: @text-color;
+	
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+p {
+	margin-bottom: 21px;
+}
+
+h1 {
+	font: 36px/1.5em @heading-font;
+}
+
+h2,
+h3 {
+	font: 21px/1.5em @heading-font;
+}
+
+h4 {
+	font: 16px/1.5em @heading-font;
+}
+
+h5 {
+	font: 14px/1.5em @heading-font;
+}
+
+h6 {
+	font: 12px/1.5em @heading-font;
+}
+
+a {
+	color: @link-color;
+	text-decoration: none;
+	
+	&:hover {
+		color: @link-color-hover;
+	}
+}
+
+
+
+
+/***********************************************************************************************/
+/* 2. Main Header */
+/***********************************************************************************************/
+.top-header {
+	padding: 1.5em 0;
+}
+
+.logo {
+	a {
+		background: transparent url('../images/logo.png') left center no-repeat;
+		display: block;
+		
+		height: 63px;
+		width: 100%;
+	}
+}
+
+.list-top-contact-info {
+	float: right;
+	margin-top: 1.5em;
+	
+	li {
+		float: left;
+		
+		border-right: 1px dotted @text-color;
+		
+		margin-right: 1.5em;
+		padding-right: 1.5em;
+	}
+}
+
+.button-top-cta {
+	float: right;
+	margin-top: .75em;
+}
+
+
+
+
+
+
+/***********************************************************************************************/
+/* Buttons */
+/***********************************************************************************************/
+.button {
+	display: inline-block;
+	
+	padding: 0 1em;
+	
+	.gradient(@link-color, darken(@link-color, 5%));
+	.round(3px);
+	
+	-webkit-box-shadow: 0 0 0 4px lighten(@border-color, 7%), inset 0 1px 2px lighten(@link-color, 25%);
+	box-shadow: 0 0 0 4px lighten(@border-color, 7%), inset 0 1px 2px lighten(@link-color, 25%);
+	
+	border: 1px solid darken(@link-color, 5%);
+	
+	height: 3em;
+	line-height: 3em;
+	
+	font-weight: bold;
+	text-transform: uppercase;
+	
+	color: white;
+	
+	&:hover {
+		color: white;
+		.gradient(lighten(@link-color, 5%), @link-color);
+	}
+	
+	&:active {
+		color: white;
+		.gradient(@link-color, lighten(@link-color, 5%));
+
+		-webkit-box-shadow: 0 0 0 4px lighten(@border-color, 7%), inset 0 1px 5px darken(@link-color, 15%);
+		box-shadow: 0 0 0 4px lighten(@border-color, 7%), inset 0 1px 5px darken(@link-color, 15%);
+	}
+}
+
+
+
+
+
+/***********************************************************************************************/
+/* Icons */
+/***********************************************************************************************/
+.icon-small {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url('../images/sprites.png');
+}
+
+.icon-big {
+	display: inline-block;
+	width: 42px;
+	height: 42px;
+	background: url('../images/sprites.png');
+}
+
+
+/* Small Icons */
+.phone {
+	background-position: 0 0;
+	margin: 0 .75em -3px 0;
+}
+
+.envelope {
+	background-position: -64px 0;
+	margin: 0 .75em -3px 0;
+}
+
+.arrow-right {
+	background-position: -128px 0;
+	margin: 0 0 -4px .75em;
+}
+
+/* Big Icons */
+.ecommerce {
+	background-position: 0 -64px;
+}
+
+.books {
+	background-position: -64px -64px;
+}
+
+.settings {
+	background-position: -128px -64px;
+}

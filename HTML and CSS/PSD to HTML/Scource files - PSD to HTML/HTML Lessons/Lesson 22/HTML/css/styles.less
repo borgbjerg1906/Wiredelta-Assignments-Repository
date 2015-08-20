@@ -1,0 +1,997 @@
+/**********************************************************************************
+
+	Project Name: Business Landing Page
+	Project Description: A business landing page for Tuts+ Premium
+	File Name: styles.css
+	Author: Adi Purdila
+	Author URI: http://www.adipurdila.com
+	Version: 1.0.0
+	
+**********************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+
+/***********************************************************************************************/
+/* LESS Variables */
+/***********************************************************************************************/
+@link-color: #E74B34;
+@link-color-hover: #132C3B;
+
+@text-color: #6c6c6c;
+
+@border-color: #E0E0E0;
+
+@blockquote-color: #2894d8;
+
+@header-main-color: #3694b7;
+@light-bg-heading-one: #3b5568;
+@light-bg-heading-two: #6694b4;
+@dark-bg-heading-one: white;
+@dark-bg-heading-two: #3694b7;
+
+@body-font: "Cabin", Helvetica, Arial, sans-serif;
+@serif-font: "Gentium Basic", Georgia, serif;
+@heading-font: @body-font;
+
+
+
+
+
+/***********************************************************************************************/
+/* LESS Mixins */
+/***********************************************************************************************/
+.round (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+.gradient (@from, @to) {
+	background-color: @from;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+	background-image: -webkit-linear-gradient(top, @from, @to);
+	background-image:    -moz-linear-gradient(top, @from, @to);
+	background-image:      -o-linear-gradient(top, @from, @to);
+	background-image:         linear-gradient(to bottom, @from, @to);
+}
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @spread: 0px, @color: #000) {
+	-webkit-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+
+.inner-shadow (inset, @x: 0, @y: 0, @blur: 1px, @color: #000) {
+	-webkit-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+
+.text-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+     text-shadow: @arguments;
+}
+
+.transition (@duration: 0.2s, @ease: ease-in) {
+	-webkit-transition: all @duration @ease;
+	-moz-transition: all @duration @ease;
+	-o-transition: all @duration @ease; 
+	transition: all @duration @ease;
+}
+
+
+
+
+/***********************************************************************************************/
+/* 1. General Styles */
+/***********************************************************************************************/
+body {
+	font: 14px/21px @body-font;
+	color: @text-color;
+	
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+p {
+	margin-bottom: 21px;
+}
+
+h1 {
+	font: 36px/1.5em @heading-font;
+}
+
+h2,
+h3 {
+	font: 21px/1.5em @heading-font;
+}
+
+h4 {
+	font: 16px/1.5em @heading-font;
+}
+
+h5 {
+	font: 14px/1.5em @heading-font;
+}
+
+h6 {
+	font: 12px/1.5em @heading-font;
+}
+
+a {
+	color: @link-color;
+	text-decoration: none;
+	
+	&:hover {
+		color: @link-color-hover;
+	}
+}
+
+blockquote {
+	font: italic 21px/1.5em @serif-font;
+	
+	color: @blockquote-color;
+	
+	cite {
+		display: block;
+		margin-top: 42px;
+		
+		font-size: 16px;
+		font-style: normal;
+	}
+}
+
+hr {
+	border: none;
+	height: 1px;
+	background-color: lighten(@border-color, 5%);
+	margin: 3em 0;
+}
+
+.link-go-top {
+	font: italic 14px @serif-font;
+}
+
+
+
+
+
+
+/***********************************************************************************************/
+/* 2. Main Header */
+/***********************************************************************************************/
+.top-header {
+	padding: 1.5em 0;
+}
+
+.logo {
+	a {
+		background: transparent url('../images/logo.png') left center no-repeat;
+		display: block;
+		
+		height: 63px;
+		width: 100%;
+	}
+}
+
+.list-top-contact-info {
+	float: right;
+	margin-top: 1.5em;
+	
+	li {
+		float: left;
+		
+		border-right: 1px dotted @text-color;
+		
+		margin-right: 1.5em;
+		padding-right: 1.5em;
+	}
+}
+
+.button-top-cta {
+	float: right;
+	margin-top: .75em;
+}
+
+
+
+
+
+/***********************************************************************************************/
+/* 3. Main CTA */
+/***********************************************************************************************/
+.section-main-cta {
+	background: url('../images/pattern-dark-blue.jpg');
+	
+	text-align: center;
+	padding: 3em 0;
+	
+	.inner-shadow(inset, 0, -8px, 0, rgba(0, 0, 0, 0.2));
+	
+	h1 {
+		color: white;
+		font: 42px/1.5em @heading-font;
+		
+		.text-shadow(1px, 1px, 1px, rgba(0, 0, 0, 0.5));
+	}
+	
+	h2 {
+		color: @header-main-color;
+		font: 26px/1.5em @heading-font;
+
+		.text-shadow(1px, 1px, 1px, rgba(0, 0, 0, 0.5));
+	}
+	
+	blockquote {
+		width: 50%;
+		margin: 0 auto;
+		
+		position: relative;
+
+		.text-shadow(1px, 1px, 1px, rgba(0, 0, 0, 0.5));
+		
+		&::before {
+			position: absolute;
+			content: url('../images/blockquote-dark-top.png');
+			width: 33px;
+			height: 23px;
+			
+			left: -2em;
+			top: 0;
+		}
+
+		&::after {
+			position: absolute;
+			content: url('../images/blockquote-dark-bottom.png');
+			width: 33px;
+			height: 23px;
+			
+			right: -2em;
+			bottom: 70px;
+		}
+		
+		cite {
+			color: white;
+		}
+	}
+}
+
+.form-single-field {
+	padding: 3em 0;
+	
+	input[type="email"],
+	input[type="text"] {
+		height: 63px;
+		width: 100%;
+		
+		font: 21px/1.5em @body-font;
+		padding: 0 8em 0 1em;
+		
+		.round(3px);
+		.box-shadow(0, 0, 0, 8px, rgba(0, 0, 0, 0.15));
+		
+		outline: none;
+		border: none;
+	}
+	
+	> p {
+		width: 50%;
+		margin: 0 auto;
+		
+		position: relative;
+		
+		input[type="submit"] {
+			position: absolute;
+			
+			right: 1em;
+			top: .75em;
+			
+			cursor: pointer;
+			
+			font: bold 14px @body-font;
+			-webkit-font-smoothing: antialiased;
+			font-smoothing: antialiased;
+		}
+	}
+}
+
+
+
+
+
+
+/***********************************************************************************************/
+/* 4. Big Features */
+/***********************************************************************************************/
+.section-big-features {
+	background: url('../images/pattern-light.jpg');
+	
+	text-align: center;
+	padding: 3em 0;
+	
+	h1, h3 {
+		color: @light-bg-heading-one;
+		.text-shadow(1px, 1px, 1px, rgba(255, 255, 255, 0.5));
+	}
+	
+	h2 {
+		color: @light-bg-heading-two;
+	}
+}
+
+.list-big-features {
+	margin: 3em 0 1.5em 0;
+	
+	li {
+		background: white;
+		border: 1px solid @border-color;
+		
+		.round(3px);
+		.box-shadow(0, 0, 5px, 0, rgba(0, 0, 0, 0.1));
+		
+		padding: 3em 1.5em 1.5em 1.5em;
+		
+		margin-bottom: 1.5em;
+		
+		h3 {
+			margin-bottom: 21px;
+		}
+		
+		span[class~="icon-big"] {
+			margin-bottom: 21px;
+		}
+	}
+}
+
+
+
+
+
+
+/***********************************************************************************************/
+/* 5. Small Features */
+/***********************************************************************************************/
+.section-small-features {
+	background: url('../images/pattern-dark.jpg');
+	
+	text-align: center;
+	padding: 3em 0;
+	
+	h1 {
+		color: @dark-bg-heading-one;
+		.text-shadow(1px, 1px, 1px, rgba(0, 0, 0, 0.5));
+	}
+	
+	h2, h3 {
+		color: @dark-bg-heading-two;
+		.text-shadow(1px, 1px, 1px, rgba(0, 0, 0, 0.5));
+	}
+	
+	.link-go-top {
+		&:hover {
+			color: white;
+		}
+	}
+}
+
+.list-small-features {
+	margin: 3em 0 1.5em 0;
+	
+	li {
+		color: white;
+		text-align: left;
+		
+		margin-bottom: 1.5em;
+		
+		h3 {
+			margin-bottom: 21px;
+		}
+		
+		h3,
+		p {
+			margin-left: 63px;
+		}
+		
+		span[class~="icon-big"] {
+			float: left;
+		}
+	}
+}
+
+
+
+
+
+/***********************************************************************************************/
+/* 6. Customers */
+/***********************************************************************************************/
+.section-customers {
+	background: white;
+	
+	text-align: center;
+	padding: 3em 0;
+	
+	h1 {
+		color: @light-bg-heading-one;
+		.text-shadow(1px, 1px, 1px, rgba(255, 255, 255, 0.5));
+	}
+	
+	h2 {
+		color: @light-bg-heading-two;
+		.text-shadow(1px, 1px, 1px, rgba(255, 255, 255, 0.5));
+	}
+
+	blockquote {
+		position: relative;
+		margin: 0 2em;
+
+		&::before {
+			position: absolute;
+			content: url('../images/blockquote-light-top.png');
+			width: 33px;
+			height: 23px;
+			
+			left: -2em;
+			top: 0;
+		}
+
+		&::after {
+			position: absolute;
+			content: url('../images/blockquote-light-bottom.png');
+			width: 33px;
+			height: 23px;
+			
+			right: -2em;
+			bottom: 70px;
+		}
+		
+		cite {
+			color: @text-color;
+		}
+	}
+}
+
+.list-customers {
+	margin-left: 3em;
+
+	li {
+		text-align: left;
+		float: left;
+		
+		img {
+			margin: 0 1.5em 1.5em 0;
+		}
+	}
+}
+
+
+
+
+/***********************************************************************************************/
+/* 7. Gallery */
+/***********************************************************************************************/
+.section-gallery {
+	background: url('../images/pattern-light.jpg');
+	
+	text-align: center;
+	padding: 3em 0;
+	
+	h1 {
+		color: @light-bg-heading-one;
+		.text-shadow(1px, 1px, 1px, rgba(255, 255, 255, 0.5));
+	}
+	
+	h2 {
+		color: @light-bg-heading-two;
+		.text-shadow(1px, 1px, 1px, rgba(255, 255, 255, 0.5));
+	}
+	
+	.box-shadow(0, -1px, 1px, 0, rgba(0, 0, 0, 0.1));
+}
+
+.cycle-slideshow {
+	margin: 3em auto;
+	width: 100%;
+	
+	max-width: 600px;
+	
+	position: relative;
+	
+	img {
+		width: 100%;
+		height: auto;
+		
+		.box-shadow(0, 0, 10px, 0, rgba(0, 0, 0, 0.3));
+	}
+}
+
+.cycle-prev,
+.cycle-next {
+	position: absolute;
+	
+	width: 42px;
+	height: 42px;
+	display: block;
+	
+	background: url('../images/sprites.png');
+	
+	cursor: pointer;
+}
+
+.cycle-prev {
+	top: 50%;
+	left: -6em;
+	
+	margin-top: -21px;
+	
+	background-position: 0 -128px;
+	
+	&:hover {
+		background-position: -128px -128px;
+	}
+}
+
+.cycle-next {
+	top: 50%;
+	right: -6em;
+	
+	margin-top: -21px;
+	
+	background-position: -64px -128px;
+	
+	&:hover {
+		background-position: -192px -128px;
+	}
+}
+
+#alt-caption {
+	font: italic 14px/21px @serif-font;
+	
+	&::before {
+		content: "- ";
+	}
+	
+	&::after {
+		content: " -";
+	}
+}
+
+
+
+
+
+
+/***********************************************************************************************/
+/* 8. Footer CTA */
+/***********************************************************************************************/
+.section-footer-cta {
+	background: white;
+	
+	.box-shadow(0, -1px, 1px, 0, rgba(0, 0, 0, 0.1));
+
+	text-align: center;
+	padding: 3em 0 0 0;
+	
+	h1 {
+		color: @light-bg-heading-one;
+	}
+	
+	h2 {
+		color: @light-bg-heading-two;
+	}
+}
+
+.button-footer-cta {
+	margin: 3em 0 1.5em 0;
+}
+
+
+
+
+
+/***********************************************************************************************/
+/* 9. Footer */
+/***********************************************************************************************/
+.site-footer {
+	padding-bottom: 1.5em;
+}
+
+.list-footer-menu,
+.list-social-icons {
+	li {
+		float: left;
+	}
+}
+
+.list-social-icons {
+	float: right;
+	
+	li {
+		margin: 0 0 .75em .75em;
+		
+		a {
+			width: 35px;
+			height: 35px;
+			display: block;
+		}
+	}
+}
+
+.twitter,
+.facebook,
+.linkedin,
+.googleplus {
+	background: url('../images/sprites.png');
+}
+
+.twitter {
+	background-position: 0 -192px;
+}
+
+.facebook {
+	background-position: -64px -192px;
+}
+
+.googleplus {
+	background-position: -128px -192px;
+}
+
+.linkedin {
+	background-position: -192px -192px;
+}
+
+
+
+
+
+/***********************************************************************************************/
+/* 10. Buttons */
+/***********************************************************************************************/
+.button {
+	display: inline-block;
+	
+	padding: 0 1em;
+	
+	.gradient(@link-color, darken(@link-color, 5%));
+	.round(3px);
+	
+	-webkit-box-shadow: 0 0 0 4px lighten(@border-color, 7%), inset 0 1px 2px lighten(@link-color, 25%);
+	box-shadow: 0 0 0 4px lighten(@border-color, 7%), inset 0 1px 2px lighten(@link-color, 25%);
+	
+	border: 1px solid darken(@link-color, 5%);
+	
+	height: 3em;
+	line-height: 3em;
+	
+	font-weight: bold;
+	text-transform: uppercase;
+	
+	color: white;
+	
+	&:hover {
+		color: white;
+		.gradient(lighten(@link-color, 5%), @link-color);
+	}
+	
+	&:active {
+		color: white;
+		.gradient(@link-color, lighten(@link-color, 5%));
+
+		-webkit-box-shadow: 0 0 0 4px lighten(@border-color, 7%), inset 0 1px 5px darken(@link-color, 15%);
+		box-shadow: 0 0 0 4px lighten(@border-color, 7%), inset 0 1px 5px darken(@link-color, 15%);
+	}
+}
+
+
+
+
+
+/***********************************************************************************************/
+/* 11. Icons */
+/***********************************************************************************************/
+.icon-small {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url('../images/sprites.png');
+}
+
+.icon-big {
+	display: inline-block;
+	width: 42px;
+	height: 42px;
+	background: url('../images/sprites.png');
+}
+
+
+/* Small Icons */
+.phone {
+	background-position: 0 0;
+	margin: 0 .75em -3px 0;
+}
+
+.envelope {
+	background-position: -64px 0;
+	margin: 0 .75em -3px 0;
+}
+
+.arrow-right {
+	background-position: -128px 0;
+	margin: 0 0 -4px .75em;
+}
+
+/* Big Icons */
+.ecommerce {
+	background-position: 0 -64px;
+}
+
+.books {
+	background-position: -64px -64px;
+}
+
+.settings {
+	background-position: -128px -64px;
+}
+
+
+
+
+
+/***********************************************************************************************/
+/* 12. Retina images */
+/***********************************************************************************************/
+@media screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+	.logo {
+		a {
+			background: transparent url('../images/logo-retina.png') left center no-repeat;
+			background-size: 133px 27px;
+		}
+	}
+	
+	.icon-small,
+	.icon-big,
+	.cycle-prev,
+	.cycle-next,
+	.twitter,
+	.facebook,
+	.linkedin,
+	.googleplus {
+		background: url('../images/sprites-retina.png');
+		background-size: 256px 256px;
+	}
+}
+
+
+
+
+
+
+
+/***********************************************************************************************/
+/* 13. FOUT (Flash of Unstyled Text) */
+/***********************************************************************************************/
+.wf-loading * {
+	opacity: 0;
+}
+
+.wf-loading {
+	background: url('../images/ajax-loader.gif') center center no-repeat;
+	
+	height: 100%;
+}
+
+.wf-active *,
+.wf-inactive * {
+	-webkit-transition: opacity 1s ease-out;
+	-moz-transition: opacity 1s ease-out;
+	-o-transition: opacity 1s ease-out;
+	transition: opacity 1s ease-out;
+}
+
+
+
+
+
+/***********************************************************************************************/
+/* 14. Responsive/adaptive stuff */
+/***********************************************************************************************/
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.logo-container-mobile,
+	.top-container-mobile {
+		width: 100%;
+		display: block;
+		
+		float: none;
+	}
+	.logo {
+		a {
+			background-position: center center;
+		}
+	}
+	
+	.form-single-field {
+		> p {
+			width: 75%;
+		}
+	}
+	
+	.cycle-next,
+	.cycle-prev {
+		position: relative;
+		
+		top: auto;
+		left: auto;
+		right: auto;
+		margin-top: 3em;
+		display: inline-block;
+	}
+	
+	.cycle-prev {
+		margin-right: .5em;
+	}
+
+	.cycle-next {
+		margin-left: .5em;
+	}
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	.container {
+		padding: 0 2em;
+	}
+
+	.logo-container-mobile,
+	.top-container-mobile {
+		width: 100%;
+		display: block;
+		text-align: center;
+		
+		float: none;
+	}
+	
+	.logo {
+		a {
+			background-position: center center;
+		}
+	}
+	
+	.button-top-cta {
+		float: none;
+	}
+	
+	.list-top-contact-info {
+		float: none;
+		width: 100%;
+		
+		li {
+			float: none;
+			
+			padding-right: 0;
+			margin-right: 0;
+			
+			border: none;
+			
+			p {
+				margin-bottom: 1.5em;
+			}
+		}
+	}	
+
+	.form-single-field {
+		> p {
+			width: 75%;
+		}
+	}
+	
+	.cycle-next,
+	.cycle-prev {
+		position: relative;
+		
+		top: auto;
+		left: auto;
+		right: auto;
+		margin-top: 3em;
+		display: inline-block;
+	}
+	
+	.cycle-prev {
+		margin-right: .5em;
+	}
+
+	.cycle-next {
+		margin-left: .5em;
+	}
+	
+	.section-customers {
+		blockquote {
+			margin-bottom: 42px;
+		}
+	}
+	
+	.list-social-icons {
+		float: none;
+	}
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+	.form-single-field {
+		input[type="submit"] {
+			display: none;
+		}
+		
+		input[type="email"],
+		input[type="text"] {
+			padding: 0 1em;
+		}
+	}
+	
+	.section-main-cta {
+		blockquote {
+			width: 75%;
+		}
+	}
+}

@@ -1,0 +1,108 @@
+/**********************************************************************************
+
+	Project Name: Business Landing Page
+	Project Description: A business landing page for Tuts+ Premium
+	File Name: styles.css
+	Author: Adi Purdila
+	Author URI: http://www.adipurdila.com
+	Version: 1.0.0
+	
+**********************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+
+/***********************************************************************************************/
+/* LESS Variables */
+/***********************************************************************************************/
+@link-color: #E74B34;
+@link-color-hover: #132C3B;
+
+@text-color: #6c6c6c;
+
+@border-color: #E0E0E0;
+
+@blockquote-color: #2894d8;
+
+@header-main-color: #3694b7;
+@light-bg-heading-one: #3b5568;
+@light-bg-heading-two: #6694b4;
+@dark-bg-heading-one: white;
+@dark-bg-heading-two: #3694b7;
+
+@body-font: "Cabin", Helvetica, Arial, sans-serif;
+@serif-font: "Gentium Basic", Georgia, serif;
+@heading-font: @body-font;
+
+
+
+
+
+/***********************************************************************************************/
+/* LESS Mixins */
+/***********************************************************************************************/
+.round(@radius: 5px) {
+	-webkit-border-radius: @radius; /* Safari 3-4, iOS 1-3.2, Android ≤1.6 */
+	          border-radius: @radius; /* Opera 10.5, IE9+, Safari 5, Chrome, Firefox 4+, iOS 4, Android 2.1+ */
+	
+	  /* useful if you don't want a bg color from leaking outside the border: */
+	  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+
+.container {
+	.round(12px);
+}

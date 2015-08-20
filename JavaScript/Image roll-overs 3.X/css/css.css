@@ -1,0 +1,67 @@
+body{
+	text-align: center;
+	background-color: #58FA82;
+}
+
+#top-header{
+	margin-bottom: 20px;
+}
+#nav-container{
+	text-align: center;
+	margin-left: 50px;
+	padding: 20px;
+	background: #088A4B;
+	border-radius: 20px;
+}
+	
+
+}
+#ul-navbar{
+	border-radius: 20px;
+}
+
+
+#home-link a.rollover{
+	
+	display: block;
+	width: 150px;
+	height: 44px;
+	text-decoration: none;
+	background: url(images/email-withborder.gif);
+}
+	
+
+#navbar-maincontainer
+{
+	background-color: #00FF80;	
+	margin-top:80px;
+	height: 300px;
+	border: 2px solid black;
+	border-radius: 20px;
+}
+#ul-navbar li{
+	margin-left:25px;
+	
+	padding: 5px;
+	background: #088A4B;
+}
+#nav{
+margin-top: 30px;
+margin-left: 5px;
+background: #088A4B;
+border: 5px solid #04B45F;	
+border-radius: 20px;
+}
+
+#nav-container ul li a img{
+	height: 45px; 
+	width: auto;
+	
+}
+#own-btn{
+	height: 45px; 
+	width: 200px;
+	
+}
+
+

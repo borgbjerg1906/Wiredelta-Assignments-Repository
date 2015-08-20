@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Title your work here</title>
+	<meta charset="UTF-8">        
+	
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<!--Stylesheets -->
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	
+
+	
+
+</head>
+<body onload="document.registration.userid.focus();">
+	<header id="top-header">
+
+		<div class="container" >
+
+			<div class="row">	
+				<div class="span12">
+					<h1 id="main-heading">JavaScript Assignment!</h1>								
+
+				</div> 
+
+			</div> 
+
+		</div> 
+
+	</header> <!-- top-header end  -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="page-header">
+							<h1> Form Validation made with JavaScript </h1>
+
+							<h4> - This form validation was made by Frederik Borgbjerg</h4>
+
+
+
+						</div> <!--   page-header end -->
+
+						<h1>Registration Form</h1>  
+
+						<p>Use tab keys to move from one input field to the next.</p>  
+						<form enctype="text/plain" action="mailto:borgbjerg1906@hotmail.com" name='registration' onSubmit="return formValidation();">  
+
+						<table id="form-table"border="1">		
+
+							<tr>
+								<td><label for="userid">User id:</label></td>
+								<td><input class="pull-left"type="text" name="userid" size="14" /></td>
+							</tr>
+
+							<tr>
+								<td><label for="passid">Password:</label></td>
+								<td><input class="pull-left" type="password" name="passid" size="14" /></td>
+							</tr>
+
+							<tr>
+								<td><label for="username">Name:</label></td>
+								<td><input type="text" name="username" size="50" /></td>
+							</tr>
+
+							<tr>
+								<td><label for="address">Address:</label></td>
+								<td><input type="text" name="address" size="50" /></td>
+							</tr>
+
+
+						<tr>
+						<td><label for="country">Country:</label></td>
+						<td>
+							<select name="country">  
+								<option selected="" value="Default">(Please select a country)</option>  
+								<option value="AF">Denmark</option>  
+								<option value="AL">United Kingdom</option>  
+								<option value="DZ">India</option>  
+								<option value="AS">Itay</option>  
+								<option value="AD">USA</option>  
+							</select>
+						</td>
+						</tr>
+
+						<tr>
+								<td><label for="zip">ZIP Code:</label></td>
+								<td><input type="text" name="zip" /></td>
+						</tr>
+						<tr>
+								<td><label for="email">Email:</label></td>  
+								<td><input type="text" name="email" size="50" /></td>  
+						</tr>
+						<tr>
+								<td><label id="gender">Sex:</label></td>  
+
+								<td id="gender-td" class="pull-left">
+								<input type="radio" name="msex" value="Male" />Male
+								<input type="radio" name="fsex" value="Female" />Female		
+													
+													
+								</td>  
+						</tr>
+						<tr>
+									
+			<td><label>Language:</label></td> 
+			<td>
+				<input type="checkbox" name="en" value="en" checked /><span>English</span><br><br>
+				<input type="checkbox" name="nonen" value="noen" /><span>Non English</span>
+			</td>
+			<tr>
+				<td><label for="desc">About:</label></td>
+				<td><textarea name="desc" id="desc"></textarea></td>
+			</tr>	 
+	 
+	<table id="submit-btn-table">
+		<tr>
+			<td>
+				<input class="btn-sucess" id="submit-btn" type="submit" name="submit" value="Submit" />
+			</td>
+		</tr>
+	</table>
+
+					
+</tr>
+</table>
+
+</form>
+</div>
+</div> <!-- panel-body end   -->
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- JavaScript -->
+
+
+<script src="js/js.js"></script>
+
+</body>
+</html>
+
