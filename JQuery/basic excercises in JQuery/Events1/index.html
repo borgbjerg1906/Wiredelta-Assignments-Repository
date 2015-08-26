@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title></title>
+	<meta charset="UTF-8">        
+	
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<!--Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css.css">
+
+</head>
+<body>
+	<dl>
+		<dt>What are your hours?</dt>
+		<dd>We're open 24/7.</dd>
+		<dt>What are your hours?</dt>
+		<dd>We're open 24/7.</dd>
+		<dt>What are your hours?</dt>
+		<dd>We're open 24/7.</dd>
+		<dt>What are your hours?</dt>
+		<dd>We're open 24/7.</dd>
+		<dt>What are your hours?</dt>
+		<dd>We're open 24/7.</dd>
+		
+	</dl>
+
+	<!-- JavaScript -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+		<script>
+		jQuery(document).ready(function($) {
+			
+			$('dd').hide();
+			
+			$('dl').on('mouseenter', 'dt', function(){
+				$(this).next()
+						.slideDown(200)
+							.siblings('dd')
+								.slideUp(200);
+
+				
+			});
+			
+
+		});
+		
+
+		</script>
+
+</body>
+</html>
+

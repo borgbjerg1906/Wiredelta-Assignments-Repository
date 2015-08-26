@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title></title>
+	<meta charset="UTF-8">        
+	
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<!--Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="day.css">
+
+
+</head>
+<body>
+	<h1>My Website</h1>
+
+	<button data-file="day">Day</button>
+	<button data-file="night">Night</button>
+
+	<!-- JavaScript -->
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+
+	<script>
+
+	(function(){
+		var link = $('link');
+		$('button').click(function(){
+
+			
+			var	stylesheet = $(this).data('file');
+			console.log(stylesheet);
+			
+		$('link').attr('href', stylesheet + '.css');
+		
+		
+
+		});
+	})();
+
+	</script>
+
+</body>
+</html>
+
+	
